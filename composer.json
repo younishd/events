@@ -1,0 +1,17 @@
+{
+    "name": "younishd/events",
+    "description": "recurring events library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Younis Bensalah",
+            "email": "younis.bensalah@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":
+    {
+        "psr-4": {"events\\": "src/events/"}
+    }
+}
