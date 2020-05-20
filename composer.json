@@ -9,9 +9,14 @@
             "email": "younis.bensalah@gmail.com"
         }
     ],
-    "require": {},
-    "autoload":
-    {
+    "autoload": {
         "psr-4": {"events\\": "src/events/"}
+    },
+    "scripts": {
+        "test": "phpunit --bootstrap vendor/autoload.php tests"
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9"
     }
 }
