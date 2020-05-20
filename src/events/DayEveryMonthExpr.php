@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace events;
 
 class DayEveryMonthExpr implements TimeExpr
@@ -13,6 +15,9 @@ class DayEveryMonthExpr implements TimeExpr
             int $weekday,
             int $count)
     {
+        if ($weekday < 0 || $weekday > 6) throw new \InvalidArgumentException("weekday: $weekday");
+        if ($count < -5 || $count > 5) throw new \InvalidArgumentException("count: $count");
+
         $this->weekday = $weekday;
         $this->count = $count;
     }
