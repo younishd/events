@@ -24,10 +24,12 @@ class DayEveryMonthExpr implements TimeExpr
 
     public function includes(\DateTimeInterface $d) : bool
     {
-        return $this->weekday === (int) $d->format('w')
-                && abs($this->count) === 1 + intdiv($this->count > 0
-                ? (int) $d->format('j') - 1
-                : (int) $d->format('t') - (int) $d->format('j'), 7);
+        $weekday = (int) $d->format('w');
+        $day = (int) $d->format('j');
+        $days_in_month = (int) $d->format('t');
+
+        return $this->weekday === $weekday
+                && abs($this->count) === 1 + intdiv($this->count > 0 ? $day - 1 : $days_in_month - $day, 7);
     }
 
 }
