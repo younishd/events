@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace events;
 
-class DayEveryMonthExpr implements TimeExpr
+class DayEveryMonthExpr implements TempExpr
 {
 
     private $weekday;

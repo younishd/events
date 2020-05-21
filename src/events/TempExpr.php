@@ -7,6 +7,6 @@ namespace events;
 interface TempExpr
 {
 
-    public function includes(\DateTimeInterface) : bool;
+    public function includes(\DateTimeInterface $d) : bool;
 
 }

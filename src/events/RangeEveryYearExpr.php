@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace events;
 
-class RangeEveryYearExpr implements TimeExpr
+class RangeEveryYearExpr implements TempExpr
 {
 
     private $start_month;
