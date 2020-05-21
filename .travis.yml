@@ -1,0 +1,18 @@
+language: php
+
+php:
+    - '7.0'
+    - '7.1'
+    - '7.2'
+    - '7.3'
+    - '7.4'
+    - nightly
+
+matrix:
+    fast-finish: true
+    allow_failures:
+        - php: nightly
+
+install: composer install --ignore-platform-reqs
+
+script: composer test
