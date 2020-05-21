@@ -11,7 +11,11 @@ php:
 matrix:
     fast-finish: true
     allow_failures:
-        - php: nightly
+        - php:
+            - '7.0'
+            - '7.1'
+            - '7.2'
+            - nightly
 
 install: composer install --ignore-platform-reqs
 
