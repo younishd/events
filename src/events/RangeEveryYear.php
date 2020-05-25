@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace events;
 
-class RangeEveryYearExpr implements TempExpr
+class RangeEveryYear implements TemporalExpression
 {
 
     private $start_month;
@@ -40,9 +40,13 @@ class RangeEveryYearExpr implements TempExpr
     {
         $month = (int) $d->format('n');
         $day = (int) $d->format('j');
+        $month_day = ($month << 5) + $day;
+        $start_month_day = ($this->start_month << 5) + $this->start_day;
+        $end_month_day = ($this->end_month << 5) + $this->end_day;
 
-        return ($this->start_month << 5) + $this->start_day <= ($month << 5) + $day
-                && ($month << 5) + $day <= ($this->end_month << 5) + $this->end_day;
+        return $this->end_month < $this->start_month
+                ? $start_month_day <= $month_day || $month_day <= $end_month_day
+                : $start_month_day <= $month_day && $month_day <= $end_month_day;
     }
 
 }
