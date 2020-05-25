@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace events;
 
-interface TempExpr
+interface TemporalExpression
 {
 
     public function includes(\DateTimeInterface $d) : bool;
