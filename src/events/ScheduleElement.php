@@ -13,7 +13,7 @@ class ScheduleElement
 
     public function __construct(
             Event $e,
-            TempExpr $t)
+            TemporalExpression $t)
     {
         $this->event = $e;
         $this->temp_expr = $t;
