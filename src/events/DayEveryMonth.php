@@ -29,7 +29,8 @@ class DayEveryMonth implements TemporalExpression
         $days_in_month = (int) $d->format('t');
 
         return $this->weekday === $weekday
-                && abs($this->count) === 1 + intdiv($this->count > 0 ? $day - 1 : $days_in_month - $day, 7);
+                && abs($this->count) ===
+                1 + intdiv($this->count > 0 ? $day - 1 : $days_in_month - $day, 7);
     }
 
 }
