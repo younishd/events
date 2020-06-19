@@ -7,6 +7,6 @@ namespace events;
 interface TemporalExpression
 {
 
-    public function includes(\DateTimeInterface $d) : bool;
+    public function includes(\DateTimeInterface $d): bool;
 
 }

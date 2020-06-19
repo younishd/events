@@ -9,21 +9,21 @@ class Schedule
 
     public function isOccurring(
             Event $e,
-            \DateTimeInterface $d) : bool
+            \DateTimeInterface $d): bool
     {
         //
     }
 
     public function occurrences(
             Event $e,
-            \DateInterval $d) : array
+            \DateInterval $d): array
     {
         //
     }
 
     public function nextOccurrence(
             Event $e,
-            \DateTimeInterface $d) : \DateTimeInterface
+            \DateTimeInterface $d): \DateTimeInterface
     {
         //
     }

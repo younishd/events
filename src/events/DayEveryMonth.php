@@ -13,16 +13,21 @@ class DayEveryMonth implements TemporalExpression
 
     public function __construct(
             int $weekday,
-            int $count)
-    {
-        if ($weekday < 0 || $weekday > 6) throw new \InvalidArgumentException("weekday: $weekday");
-        if ($count < -5 || $count > 5) throw new \InvalidArgumentException("count: $count");
+            int $count
+    ) {
+        if ($weekday < 0 || $weekday > 6) {
+            throw new \InvalidArgumentException(sprintf('weekday: "%s"', $weekday));
+        }
+
+        if ($count < -5 || $count > 5) {
+            throw new \InvalidArgumentException(sprintf('count: "%s"', $count));
+        }
 
         $this->weekday = $weekday;
         $this->count = $count;
     }
 
-    public function includes(\DateTimeInterface $d) : bool
+    public function includes(\DateTimeInterface $d): bool
     {
         $weekday = (int) $d->format('w');
         $day = (int) $d->format('j');
